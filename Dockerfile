@@ -9,6 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
     && apt-get install -y xfce4 \
 	lightdm \
+ 	sudo \
 	wget \
 	make 
 	
@@ -23,6 +24,7 @@ RUN	apt-get update \
 	octave-statistics
 	
 RUN	echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections \
+	&& echo "deb http://deb.debian.org/debian/ bookworm main contrib non-free" >> /etc/apt/sources.list \
 	&& dpkg --add-architecture i386 \
 	&& apt-get update \
 	&& apt-get install -y csh \
@@ -32,7 +34,7 @@ RUN	echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula selec
 	libstdc++6:i386 \
 	libx11-6:i386 \
 	libxext6:i386 \
-	msttcorefonts \
+	ttf-mscorefonts-installer \
 	liboctave-dev 
 
 RUN apt-get install -y xterm xfonts-75dpi lib32z1
