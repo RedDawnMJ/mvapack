@@ -39,8 +39,10 @@ RUN	echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula selec
 
 RUN apt-get install -y xterm xfonts-75dpi lib32z1
 
-RUN rm /run/reboot-required*
+RUN apt-get install -y lightdm-gtk-greeter xserver-xorg-video-dummy
+RUN echo "Section \"Device\"\n\tIdentifier \"dummy\"\n\tDriver \"dummy\"\nEndSection" > /etc/X11/xorg.conf.d/01-dummy.conf
 RUN echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager
+RUN mkdir /etc/lightdm/lightdm.conf.d
 RUN echo "\
     [LightDM]\n\
 	[Seat:*]\n\
@@ -49,8 +51,9 @@ RUN echo "\
 	xserver-display-number=0\n\
 	autologin-user=root\n\
 	autologin-user-timeout=0\n\
-	autologin-session=Lubuntu\n\
-	" > /etc/lightdm/lightdm.conf.d/lightdm.conf
+	autologin-session=xfce\n\
+	greeter-session=lightdm-gtk-greeter\n\
+	" > /etc/lightdm/lightdm.conf.d/50-dummy.conf
 	
 ENV DISPLAY=host.docker.internal:0.0
 
@@ -70,7 +73,7 @@ RUN chmod 777 *.com \
 	&& mv *.com /opt/nmrpipe \
 	&& mv *.tZ /opt/nmrpipe
 RUN sudo sh -c "cd /opt/nmrpipe ; ./install.com option +type linux212_64"
-RUN echo "pkg install mvapack-20231102.tar.gz;quit" | octave 
+#RUN echo "version \npause(5); pkg install mvapack-20231102.tar.gz; quit" | octave 
 
 # Setup user with manual and logs
 RUN mkdir /root/Desktop \
@@ -81,12 +84,14 @@ RUN mkdir /root/Desktop \
 	Type=Application\n\
 	Name=Octave_MVAPACK\n\
 	Exec=octave --gui\n\
-	Icon=/usr/share/octave/6.4.0/imagelib/octave-logo.svg\n\
+	Icon=/usr/share/octave/6.2.0/imagelib/octave-logo.svg\n\
 	" > /root/Desktop/octave.desktop
 
+
+
 # Clean up
-RUN rm *.gz \
-	&& apt-get clean
+#RUN rm *.gz 
+RUN apt-get clean
 
 # Set docker to open the gui for any X server in windows (mobaxterm, xming, xlaunch)
-CMD service dbus start ; service lightdm start
+CMD service dbus start; service lightdm start; lightdm --test-mode --debug
