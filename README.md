@@ -11,4 +11,4 @@ The software package can be installed through the Dockerfile found in this [git 
 ## There's More!
 We have developed a synthetic dataset in mzML format for benchmarking metabolomics data processing software. We have a publication *(doi here when submitted)* demonstrating the use and capabilities of multiple software applications. That data is available throught the following link: *(link here after submission)*
 
-We also have a standard mixture dataset *(link here after submission)* and biological dataset (M. Smegmatis) *(link here after submission)* that were used to test the LC-MS pipelines as well as benchmark the software applications discussed above.
+We also have a standard mixture dataset *(link here after submission)* and biological dataset (M. Smegmatis) *(link here after submission)* that were used to test the LC-MS pipelines as well as benchmark the software applications as discussed above.
