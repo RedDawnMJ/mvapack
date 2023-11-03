@@ -6,7 +6,7 @@
 MVAPACK stands for MultiVariate Analysis Package. This is key to the use of Octave which is a simple language to learn and has much support for linear algebra based algorithms. The use of multivariate regression techniques has been pivotal to metabolomics as a whole. Especially principle component analysis (PCA) which has become a nearly emblematic analysis approach of metabolomics. MVAPACK also provides partial least squares (PLS), orthogonal partial least squares (OPLS), linear discriminate analysis (LDA), random forest (RF), and support vector machine (SVM) algorithms. MVAPACK also provides multiple data loading functions to simplify the data analysis pipeline of multiple types of instrumental data.
 
 ## How can I get MVAPACK?
-The software package can be installed through the Dockerfile found in this git page or octave installable tar files can be obtained by requesting through the [Powers Group website](https://bionmr.unl.edu/mvapack-form.php). MVAPACK is also being developed as a webserver with full GUI support and interactive processing workflow.
+The software package can be installed through the Dockerfile found in this [git page](https://github.com/RedDawnMJ/mvapack) or octave installable tar files can be obtained by requesting through the [Powers Group website](https://bionmr.unl.edu/mvapack-form.php). MVAPACK is also being developed as a webserver with full GUI support and interactive processing workflow.
 
 ## There's More!
 We have developed a synthetic dataset in mzML format for benchmarking metabolomics data processing software. We have a publication *(doi here when submitted)* demonstrating the use and capabilities of multiple software applications. That data is available throught the following link: *(link here after submission)*
