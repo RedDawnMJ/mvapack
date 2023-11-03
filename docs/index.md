@@ -8,7 +8,7 @@ MVAPACK stands for MultiVariate Analysis Package. This is key to the use of Octa
 The software package can be installed through the Dockerfile found in this [git page](https://github.com/RedDawnMJ/mvapack) or octave installable tar files can be obtained by requesting through the [Powers Group website](https://bionmr.unl.edu/mvapack-form.php). MVAPACK is also being developed as a webserver with full GUI support and interactive processing workflow.
 
 ## There's More!
-We have developed a synthetic dataset in mzML format for benchmarking metabolomics data processing software. We have a publication *(doi here when submitted)* demonstrating the use and capabilities of multiple software applications. That data is available throught the following link: *(link here after submission)*
+We have developed a [synthetic dataset](https://bionmr.unl.edu/files/mvapack/SyntheticDataset.zip) in mzML format for benchmarking metabolomics data processing software. We have a publication *(link here after submission)* demonstrating the use and capabilities of multiple software applications.
 
-We also have a standard mixture dataset *(link here after submission)* and biological dataset (M. Smegmatis) *(link here after submission)* that were used to test the LC-MS pipelines as well as benchmark the software applications as discussed above.
+We also have a [standard mixture dataset](https://bionmr.unl.edu/files/mvapack/Standard-Mixture.zip) and [biological dataset (M. Smegmatis)](https://bionmr.unl.edu/files/mvapack/Smegmatis%20Dataset.zip) that were used to test the LC-MS pipelines as well as benchmark the software applications as discussed above.
 
